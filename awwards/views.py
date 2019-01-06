@@ -138,13 +138,13 @@ class PostList(APIView):
                 serialized = PostsSerializer(post,many=True)
                 return Response(serialized.data)
 
-        def post(self,request,format=None):
-                serializing = PostsSerializer(data=request.data)
-                if serializing.is_valid():
-                        serializing.save()
-                        return Response(serialized.data,status=status.HTTP_201_CREATED)
-                return Response(serialized.errors,status=staus.HTTP_401_BAD_REQUEST)
-
+        # def post(self,request,format=None):
+        #         serializing = PostsSerializer(data=request.data)
+        #         if serializing.is_valid():
+        #                 serializing.save()
+        #                 return Response(serialized.data,status=status.HTTP_201_CREATED)
+        #         return Response(serialized.errors,status=staus.HTTP_401_BAD_REQUEST)
+        #
 
 
 # class ProfilesList(APIView):
