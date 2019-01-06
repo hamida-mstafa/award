@@ -10,4 +10,4 @@ class PostsSerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['id','user','up','bios','phone_number']
+        fields = ['id','user','dp','bio','phone_number']
