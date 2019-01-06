@@ -169,11 +169,11 @@ class ProfileData(APIView):
                 except Profile.DoesNotExist:
                         return Http404
 
-        # def get(self, request, pk, format=None):
-        #         profile = self.get_profile(pk)
-        #         serialized = ProfileSerializer(profile)
-        #         return Response(serialized.data)
-        #
+        def get(self, request, pk, format=None):
+                profile = self.get_profile(pk)
+                serialized = ProfileSerializer(profile)
+                return Response(serialized.data)
+        
         # def put(self,request,pk,format=None):
         #         profile = self.get_profile(pk)
         #         serializers = ProfileSerializer(profile,request.data)
