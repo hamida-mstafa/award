@@ -17,13 +17,13 @@ class ProfileForm(forms.ModelForm):
         exclude = ['user']
         fields = ['dp','bio']
 
-# class PostsForm(forms.ModelForm):
-#     class Meta:
-#         model = Posts
-#         exclude = ['user']
-#         fields = ['name','link','image1','image2','image3','video']
-#
-#
+class PostsForm(forms.ModelForm):
+    class Meta:
+        model = Posts
+        exclude = ['user']
+        fields = ['name','link','image1','image2','image3','video']
+
+
 # class Comments(forms.ModelForm):
 #     class Meta:
 #         model=Comments
