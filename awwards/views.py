@@ -115,18 +115,18 @@ def get_post_by_id(request,id):
 
 
 
-# def comment(request,id):
-#     post = Posts.objects.get(id=id)
-#     if request.method == 'POST':
-#         comm=Comments(request.POST)
-#         if comm.is_valid():
-#             comment=comm.save(commit=False)
-#             comment.user = request.user
-#             comment.post=post
-#             comment.save()
-#             return redirect('index')
-#     return redirect('index')
-#
+def comment(request,id):
+    post = Posts.objects.get(id=id)
+    if request.method == 'POST':
+        comm=Comments(request.POST)
+        if comm.is_valid():
+            comment=comm.save(commit=False)
+            comment.user = request.user
+            comment.post=post
+            comment.save()
+            return redirect('index')
+    return redirect('index')
+
 # def profiles(request,id):
 #         user=User.objects.get(id=id)
 #         posts = Posts.objects.filter(user=user)
