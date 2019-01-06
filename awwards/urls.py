@@ -9,7 +9,7 @@ urlpatterns=[
     url(r'^signup/',views.signup,name='signup'),
     url(r'^profile/',views.profile,name='profile'),
     url(r'^post/',views.posts,name='posts'),
-    url(r'^mids/(?P<id>\d+)',views.get_post_by_id,name='one'),
+    url(r'^one/(?P<id>\d+)',views.get_post_by_id,name='one'),
     url(r'^comment/(\d+)',views.comment,name='comment'),
     url(r'^profiles/(\d+)',views.profiles,name='profiles'),
     url(r'^api/posts',views.PostList.as_view()),
