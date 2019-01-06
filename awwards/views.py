@@ -132,21 +132,21 @@ def profiles(request,id):
         posts = Posts.objects.filter(user=user)
         return render(request,'profile/profiles.html',{"user":user,"posts":posts})
 
-# class PostList(APIView):
-#         def get(self,request,format=None):
-#                 post = Posts.objects.all()
-#                 serialized = PostsSerializer(post,many=True)
-#                 return Response(serialized.data)
-#
-#         def post(self,request,format=None):
-#                 serializing = PostsSerializer(data=request.data)
-#                 if serializing.is_valid():
-#                         serializing.save()
-#                         return Response(serialized.data,status=status.HTTP_201_CREATED)
-#                 return Response(serialized.errors,status=staus.HTTP_401_BAD_REQUEST)
-#
-#
-#
+class PostList(APIView):
+        def get(self,request,format=None):
+                post = Posts.objects.all()
+                serialized = PostsSerializer(post,many=True)
+                return Response(serialized.data)
+
+        def post(self,request,format=None):
+                serializing = PostsSerializer(data=request.data)
+                if serializing.is_valid():
+                        serializing.save()
+                        return Response(serialized.data,status=status.HTTP_201_CREATED)
+                return Response(serialized.errors,status=staus.HTTP_401_BAD_REQUEST)
+
+
+
 # class ProfilesList(APIView):
 #         def get(self,request,format=None):
 #                 postlist = Profile.objects.all()
