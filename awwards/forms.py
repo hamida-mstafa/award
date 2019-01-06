@@ -11,12 +11,12 @@ class SignUpForm(UserCreationForm):
         exclude = []
         fields = ['first_name','last_name','username','email','password1','password2']
 
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = Profile
-#         exclude = ['user']
-#         fields = ['dp','bio']
-#
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['user']
+        fields = ['dp','bio']
+
 # class PostsForm(forms.ModelForm):
 #     class Meta:
 #         model = Posts
