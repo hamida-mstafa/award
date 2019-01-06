@@ -127,11 +127,11 @@ def comment(request,id):
             return redirect('index')
     return redirect('index')
 
-# def profiles(request,id):
-#         user=User.objects.get(id=id)
-#         posts = Posts.objects.filter(user=user)
-#         return render(request,'profile/profiles.html',{"user":user,"posts":posts})
-#
+def profiles(request,id):
+        user=User.objects.get(id=id)
+        posts = Posts.objects.filter(user=user)
+        return render(request,'profile/profiles.html',{"user":user,"posts":posts})
+
 # class PostList(APIView):
 #         def get(self,request,format=None):
 #                 post = Posts.objects.all()
