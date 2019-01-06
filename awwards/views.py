@@ -52,17 +52,17 @@ def profile(request):
                         return render(request,'profile/profile.html',{"profile":profile,"form":form,"message":message})
         return render(request,'profile/profile.html',{"form":form,"posts":posts,"profile":profile})
 
-# def posts(request):
-#         if request.method == 'POST':
-#                 form = PostsForm(request.POST,request.FILES)
-#                 if form.is_valid():
-#                         post = form.save(commit=False)
-#                         post.user = request.user
-#                         post.save()
-#                         return redirect('index')
-#
-#         return redirect('index')
-#
+def posts(request):
+        if request.method == 'POST':
+                form = PostsForm(request.POST,request.FILES)
+                if form.is_valid():
+                        post = form.save(commit=False)
+                        post.user = request.user
+                        post.save()
+                        return redirect('index')
+
+        return redirect('index')
+
 # def get_post_by_id(request,id):
 #         post = Posts.objects.get(id=id)
 #         likes = Likes.objects.filter(post=post)
