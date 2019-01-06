@@ -24,12 +24,12 @@ class PostsForm(forms.ModelForm):
         fields = ['name','link','image1','image2','image3','video']
 
 
-# class Comments(forms.ModelForm):
-#     class Meta:
-#         model=Comments
-#         exclude=[]
-#         fields=['comment']
-#
+class Comments(forms.ModelForm):
+    class Meta:
+        model=Comments
+        exclude=[]
+        fields=['comment']
+
 #
 # rating_choices = [
 #     (1, '1'),
