@@ -32,12 +32,12 @@ class Posts(models.Model):
     video = models.FileField(upload_to='videos',null=True)
 
 
-#     def __str__(self):
-#         return self.user.username
-#
-#     class Meta:
-#         ordering = ['-id']
-#
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        ordering = ['-id']
+
 #     @classmethod
 #     def save_post(self):
 #         self.save()
