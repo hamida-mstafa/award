@@ -169,33 +169,33 @@ class ProfileData(APIView):
                 except Profile.DoesNotExist:
                         return Http404
 
-        def get(self, request, pk, format=None):
-                profile = self.get_profile(pk)
-                serialized = ProfileSerializer(profile)
-                return Response(serialized.data)
+        # def get(self, request, pk, format=None):
+        #         profile = self.get_profile(pk)
+        #         serialized = ProfileSerializer(profile)
+        #         return Response(serialized.data)
+        #
+        # def put(self,request,pk,format=None):
+        #         profile = self.get_profile(pk)
+        #         serializers = ProfileSerializer(profile,request.data)
+        #         if serializers.is_valid():
+        #                 serializers.save()
+        #                 return Response(serializers.data)
+        #         return Response(serializers.errors,status=ststus.HTTP_400_BAD_REQUEST)
+        #
+        # def delete(self,request,pk,format=None):
+        #         profile = self.get_profile(pk)
+        #         profile.delete()
+        #         return Response(status=status.HTTP_204_BAD_REQUEST)
 
-        def put(self,request,pk,format=None):
-                profile = self.get_profile(pk)
-                serializers = ProfileSerializer(profile,request.data)
-                if serializers.is_valid():
-                        serializers.save()
-                        return Response(serializers.data)
-                return Response(serializers.errors,status=ststus.HTTP_400_BAD_REQUEST)
 
-        def delete(self,request,pk,format=None):
-                profile = self.get_profile(pk)
-                profile.delete()
-                return Response(status=status.HTTP_204_BAD_REQUEST)
+def search(request):
 
-
-# def search(request):
-#
-#     if 'projects' in request.GET or request.GET['projects']:
-#         search_item = request.GET.get('projects')
-#         searched_projects = Posts.objects.filter(name=search_item)
-#         print(searched_projects)
-#         message = "{}".format(search_item)
-#         return render(request, 'search.html',{"message":message,"users": searched_users})
-#     else:
-#         message = "You haven't searched for any user"
-#         return render(request, 'search.html',{"message":message})
+    if 'projects' in request.GET or request.GET['projects']:
+        search_item = request.GET.get('projects')
+        searched_projects = Posts.objects.filter(name=search_item)
+        print(searched_projects)
+        message = "{}".format(search_item)
+        return render(request, 'search.html',{"message":message,"users": searched_users})
+    else:
+        message = "You haven't searched for any user"
+        return render(request, 'search.html',{"message":message})
