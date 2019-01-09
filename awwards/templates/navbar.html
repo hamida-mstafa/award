@@ -15,14 +15,19 @@
 
       </ul>
       <ul class="navbar-nav mr-auto" >
-      <li class="nav-item" >
+        <li class="nav-item" >
+          <a style="color:white; font-family:serif;font-size: 20px; "href="signup">signup</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto" >
+        <li class="nav-item" >
         {% if request.user.profile.dp %}
         <a class="nav-link" href="/profile/">
         <img src="{{request.user.profile.dp.url }}" style="border-radius: 50%; width: 50px; height: 50px;"  id="prof">
         {% else %}
-        <img src="https://www.w3schools.com/howto/img_avatar.png" style="border-radius: 50%; width: 50px; height: 50px;">
+        <img src="https://www.w3schools.com/howto/img_avatar2.png" style="border-radius: 50%; width: 50px; height: 50px;">
         {% endif %}
-        {{request.user.username}}
+        <a href="/profile/" style="color:white">{{request.user.username}}</a>
       </a>
       </li>
     </ul>

@@ -34,7 +34,7 @@ def signup(request):
             profile.save()
             login(request,user)
             return redirect('/')
-    return render(request,'signup.html',{"form":form})
+    return render(request,'registration/signup.html',{"form":form})
 
 
 def profile(request):

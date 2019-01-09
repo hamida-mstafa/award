@@ -11,7 +11,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     dp =  models.ImageField(upload_to='images')
     bio = HTMLField(max_length=500)
-    phone_number = models.BigIntegerField()
+    # phone_number = models.BigIntegerField()
 
     def save_profile(self):
         self.save()
