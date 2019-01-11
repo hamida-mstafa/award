@@ -1,5 +1,5 @@
 from . import views
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -17,6 +17,7 @@ urlpatterns=[
     url(r'^api/profile/profile-id/(?P<pk>[0-9]+)/$',
         views.ProfileData.as_view()),
     url(r'^search',views.search,name='search'),
+    url(r'^tinymce/', include('tinymce.urls')),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

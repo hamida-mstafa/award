@@ -10,7 +10,7 @@ from django.shortcuts import render,redirect
 from .forms import SignUpForm,ProfileForm,PostsForm,Comments,Votes
 from .models import Profile,Posts,Likes
 from django.http import Http404
-
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 # Create your views here.
@@ -111,7 +111,7 @@ def get_post_by_id(request,id):
                                         user=request.user,post=post)
                         rating.save()
                         return redirect('/')
-        return render(request,'one.html',{"post":post,"des":des,"usa":usa,"cont":cont,"crea":crea, "vote":vote,"comm":comm})
+        return render(request,'mids.html',{"post":post,"des":des,"usa":usa,"cont":cont,"crea":crea, "vote":vote,"comm":comm})
 
 
 
