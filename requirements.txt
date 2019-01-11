@@ -17,5 +17,5 @@ psycopg2==2.7.5
 python-decouple==3.1
 pytz==2018.5
 six==1.11.0
-whitenoise==4.1
+whitenoise==4.0
 ww==0.2.1
